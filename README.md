@@ -1,6 +1,25 @@
 # A5: Functional Programming
 
-Solutions for [What is left?](https://eolymp.com/problems/1964) in C++ and Haskell.
+This repository contains solution codes for [What is left?](https://eolymp.com/problems/1964) problem in C++ and Haskell.
 
-- `CPP/main.cpp`: imperative solution.
-- `Haskell/Main.hs`: functional solution.
+## C++
+
+The imperative solution is in `main.cpp`. It stores the numbers from 1 to n in a vector. Each round removes even positions, odd positions, or positions divisible by 3. The positions are counted again after every round.
+
+At first, I created a new vector in each round to store the remaining numbers. This version received 97/100 with memory overflow because it needed memory for both vectors at the same time.
+
+![Result: memory overflow, 97/100](screenshots/cpp-97.png)
+
+Then I changed the code to move the remaining numbers to the front of the same vector and reduce its size. It repeats until one number is left. It uses array processing, not a formula. This version received "Accepted, 100/100" from Eolymp.
+
+![Result: accepted, 100/100](screenshots/cpp-100.png)
+
+Run these commands to test the C++ code from the project root folder:
+
+```bash
+mkdir -p build
+g++ -std=c++17 -O2 CPP/main.cpp -o build/main
+./build/main
+```
+
+Enter the number and press Enter. For example, for input 10, the output should be 3.

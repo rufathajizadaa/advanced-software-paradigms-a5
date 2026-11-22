@@ -6,3 +6,6 @@ build/
 *.exe
 a.out
 .DS_Store
+CPP/main
+*.dSYM/
+.vscode/
