@@ -1,0 +1,8 @@
+build/
+*.o
+*.hi
+*.dyn_o
+*.dyn_hi
+*.exe
+a.out
+.DS_Store
